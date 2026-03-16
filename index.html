@@ -6,6 +6,8 @@
   <title>BanJoey—Joey Interrante's One-of-a-Kind Instrument</title>
   <meta name="description" content="BanJoey is drummer Joey Interrante's handmade fusion instrument—a Cajon, bass pedal, cymbal, and banjo shell built into one tiny, mighty kit. Watch it in action, hear the story, and share yours.">
   <link rel="canonical" href="https://www.banjoey.com/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="assets/img/favicon.png">
 
   <!-- Open Graph -->
   <meta property="og:title" content="BanJoey—Joey Interrante's One-of-a-Kind Instrument">
@@ -358,6 +360,9 @@
 
     .contact-email:hover { text-decoration: underline; }
 
+    .contact-desktop { display: inline-block; }
+    .contact-mobile  { display: none; }
+
     .social-links {
       display: flex;
       gap: 1.75rem;
@@ -428,6 +433,9 @@
       .video-grid { grid-template-columns: 1fr; }
 
       .btn-row { flex-direction: column; align-items: center; }
+
+      .contact-desktop { display: none; }
+      .contact-mobile  { display: block; margin-top: 1rem; }
     }
 
     @media (max-width: 900px) {
@@ -513,13 +521,14 @@
         <p style="max-width: 580px;">Six videos. One ridiculous instrument. A few great friends sitting in.</p>
 
         <div class="video-grid">
-          <!-- REPLACE VIDEOID_1 through VIDEOID_6 with actual YouTube video IDs -->
-          <!-- Example: if the YouTube URL is youtube.com/watch?v=dQw4w9WgXcQ, the ID is dQw4w9WgXcQ -->
+          <!-- Replace remaining VIDEOID_2 through VIDEOID_6 with actual YouTube video IDs -->
           <div class="video-wrap">
             <iframe
-              src="https://www.youtube.com/embed/VIDEOID_1"
+              src="https://www.youtube.com/embed/5NypFSnq3kA?si=3xZ1gNWpixKZ-y6O"
               title="50 Ways Groove—BanJoey"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
               loading="lazy"
             ></iframe>
@@ -633,7 +642,15 @@
         <p class="label">Get in touch</p>
         <h2>Say hello.</h2>
         <p>Questions about the BanJoey, booking a show, or just want to talk music? Reach out anytime.</p>
-        <a href="/cdn-cgi/l/email-protection#52383d372b1230333c383d372b7c313d3f" class="contact-email"><span class="__cf_email__" data-cfemail="513b3e34281133303f3b3e34287f323e3c">[email&#160;protected]</span></a>
+
+        <!-- Desktop: email -->
+        <a href="mailto:joey@banjoey.com" class="contact-email contact-desktop">Send me a message</a>
+
+        <!-- Mobile: text or call -->
+        <div class="contact-mobile">
+          <a href="sms:+18133268800&body=Hey%20Joey%2C%20I%20wanted%20to%20reach%20out%20about%20BanJoey%E2%80%94" class="btn-primary" style="display:inline-block;margin-bottom:0.75rem;">Text me</a>
+          <a href="tel:+18133268800" class="contact-email" style="display:block;font-size:22px;">813-326-8800</a>
+        </div>
 
         <nav class="social-links" aria-label="Social media links">
           <a href="https://www.facebook.com/p/BanJoey-Official-61555344519003/" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -650,7 +667,7 @@
     <p>&copy; 2026 BanJoey. Site by <a href="https://gofercontent.com" target="_blank" rel="noopener noreferrer">Gofer Content</a>.</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     function toggleNav(btn) {
       var links = document.getElementById('nav-links');
       var open  = links.classList.toggle('open');
