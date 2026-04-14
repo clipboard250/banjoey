@@ -71,17 +71,17 @@
     }
 
     /* NAV — padding-based, never clips */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 2rem;
-      background: var(--bg);
-      border-bottom: 1px solid var(--rule);
-    }
+   .site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 2rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
 
     .nav-logo {
       font-family: var(--font-head);
@@ -439,7 +439,7 @@
     footer a { color: var(--warm-mid); text-decoration: underline; }
 
     @media (max-width: 768px) {
-      nav { padding: 14px 1.25rem; }
+      .site-nav { padding: 14px 1.25rem; }
       .nav-toggle { display: flex; }
       .nav-links {
         display: none;
@@ -471,7 +471,7 @@
 </head>
 <body>
 
-  <nav>
+  <nav class="site-nav">
     <a href="#hero" class="nav-logo">BanJoey</a>
     <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav(this)">
       <span></span><span></span><span></span>
