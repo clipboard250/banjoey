@@ -7,10 +7,9 @@
   <meta name="description" content="The BanJoey is a handmade instrument invented by Tampa Bay drummer Joey Interrante — a banjo shell played like a kick drum, with a cymbal on top and snare wires underneath. Nobody else has one.">
   <link rel="canonical" href="https://www.banjoey.com/">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
-  <link rel="shortcut icon" href="assets/img/favicon.png">
 
   <meta property="og:title" content="BanJoey — Joey Interrante's One-of-a-Kind Instrument">
-  <meta property="og:description" content="Joey Interrante plays a full rhythm section by himself. The BanJoey is a handmade instrument nobody else has.">
+  <meta property="og:description" content="A Tampa Bay drummer took a banjo shell, a bass pedal, a cymbal, and snare wires and made something the world had never heard.">
   <meta property="og:url" content="https://www.banjoey.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.banjoey.com/assets/img/banjoey-hero-home.jpg">
@@ -71,7 +70,7 @@
       overflow-x: hidden;
     }
 
-    /* NAV */
+    /* NAV — padding-based, never clips */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -79,22 +78,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 2rem;
-      height: 60px;
+      padding: 14px 2rem;
       background: var(--bg);
       border-bottom: 1px solid var(--rule);
     }
 
     .nav-logo {
-      font-family: var(--font-display);
-      font-size: 18px;
-      line-height: 60px;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 20px;
       color: var(--ink);
       text-decoration: none;
       flex-shrink: 0;
-      display: block;
-      overflow: hidden;
-      white-space: nowrap;
     }
 
     .nav-links {
@@ -160,9 +155,9 @@
       background: linear-gradient(
         to top,
         rgba(26,18,11,0.97) 0%,
-        rgba(26,18,11,0.75) 45%,
-        rgba(26,18,11,0.45) 75%,
-        rgba(26,18,11,0.2)  100%
+        rgba(26,18,11,0.78) 45%,
+        rgba(26,18,11,0.48) 72%,
+        rgba(26,18,11,0.22) 100%
       );
     }
 
@@ -213,9 +208,7 @@
 
     .btn-primary:hover { background: #A34E22; }
 
-    /* SECTIONS */
     section { padding: 5.5rem 2.5rem; }
-
     .section-inner { max-width: 780px; margin: 0 auto; }
     .section-inner.wide { max-width: 1100px; }
     .section-inner.center { text-align: center; }
@@ -261,7 +254,7 @@
 
     .stat-number {
       font-family: var(--font-display);
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(32px, 4.5vw, 52px);
       color: var(--rust);
       line-height: 1;
       display: block;
@@ -435,7 +428,6 @@
 
     .social-links a:hover { color: var(--rust); border-color: var(--rust); }
 
-    /* FOOTER */
     footer {
       border-top: 1px solid var(--rule);
       padding: 2rem 2.5rem;
@@ -446,14 +438,13 @@
 
     footer a { color: var(--warm-mid); text-decoration: underline; }
 
-    /* MOBILE */
     @media (max-width: 768px) {
-      nav { padding: 0 1.25rem; }
+      nav { padding: 14px 1.25rem; }
       .nav-toggle { display: flex; }
       .nav-links {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0; right: 0;
         background: var(--bg);
         border-bottom: 1px solid var(--rule);
@@ -499,7 +490,7 @@
       <img
         class="hero-img"
         src="assets/img/banjoey-hero-home.jpg"
-        alt="Joey Interrante playing the BanJoey, a handmade instrument built from a banjo shell, bass pedal, cymbal, and snare wires"
+        alt="Joey Interrante playing the BanJoey"
         width="1600"
         height="900"
         fetchpriority="high"
@@ -508,7 +499,7 @@
       <div class="hero-content">
         <p class="hero-kicker">Drummer. Inventor. Tampa Bay.</p>
         <h1 class="hero-h1">He built the only one.</h1>
-        <p class="hero-sub">Joey Interrante took a banjo shell, a bass pedal, a cymbal, and snare wires and built an instrument that had never existed before. He carries the whole thing to a gig by himself and plays it alone. It sounds like nothing you've heard, because until he made it, it didn't exist.</p>
+        <p class="hero-sub">Joey Interrante took a banjo shell, a bass pedal, a cymbal, and snare wires and made something the world had never heard. He carries it to every gig alone, sets it up in 20 minutes, and plays a full rhythm section by himself.</p>
         <a href="#what" class="btn-primary">See how it works</a>
       </div>
     </section>
@@ -516,8 +507,8 @@
     <section id="what">
       <div class="section-inner">
         <p class="label">What is the BanJoey</p>
-        <h2>He needed a sound that didn't exist, so he built it.</h2>
-        <p>The BanJoey is a banjo shell mounted on a custom-built box, driven by a bass pedal, topped with a cymbal, and fitted with snare wires underneath. It is a full rhythm section in one instrument that one person can carry, set up, and play alone. Joey designed it, built it by hand, and has been performing on it ever since.</p>
+        <h2>He needed a sound that didn't exist anywhere, so he went and made it.</h2>
+        <p>The BanJoey is a banjo shell mounted on a custom box, driven by a bass pedal, topped with a cymbal, and fitted with snare wires underneath. One instrument. One person. A full rhythm section. Joey designed it, put it together by hand, and has been performing on it ever since.</p>
         <p>The name came from his bandmate Gale Trippsmith, who introduced him onstage one night and didn't know what to call the thing. She said "this is Joey playing a BanJoey" and it stuck. There is still only one in the world.</p>
 
         <div class="stats-row">
@@ -562,15 +553,15 @@
         <p class="label">About Joey</p>
         <div class="about-grid">
           <div>
-            <h2>A lifelong drummer who still builds his own gear.</h2>
+            <h2>A lifelong drummer who still makes his own gear.</h2>
             <p>Joey Interrante is a professional drummer based in Tampa Bay. He performs regularly across Florida with artists including Gale Trippsmith and the Kid Royal Band, records remote drum tracks through Hip Pocket Studios, and still carries his own gear to every single gig.</p>
-            <p>The BanJoey is the instrument he invented when nothing on the market did what he needed. He built the first one by hand, refined it over years of live performance, and has been turning heads with it ever since. It is the only one in existence.</p>
+            <p>The BanJoey came from a simple frustration: nothing on the market did what he needed. So he designed it, put it together by hand, refined it over years of live performance, and has been turning heads with it ever since.</p>
           </div>
           <div>
             <img
               class="about-img"
               src="assets/img/joey-interrante-banjoey-outdoor-concert.webp"
-              alt="Joey Interrante performing live with the BanJoey"
+              alt="Joey Interrante performing live"
               loading="lazy"
               width="560"
               height="700"
