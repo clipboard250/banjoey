@@ -71,6 +71,7 @@
       overflow-x: hidden;
     }
 
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -78,19 +79,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.9rem 2rem;
+      padding: 0 2rem;
+      height: 60px;
       background: var(--bg);
       border-bottom: 1px solid var(--rule);
-      min-height: 56px;
     }
 
     .nav-logo {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 18px;
+      line-height: 60px;
       color: var(--ink);
       text-decoration: none;
-      line-height: 1;
       flex-shrink: 0;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -124,12 +128,13 @@
 
     .nav-toggle span {
       display: block;
-      width: 22px;
+      width: 24px;
       height: 2px;
       background: var(--ink);
       border-radius: 2px;
     }
 
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -152,7 +157,13 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(26,18,11,0.92) 0%, rgba(26,18,11,0.4) 55%, rgba(26,18,11,0.1) 100%);
+      background: linear-gradient(
+        to top,
+        rgba(26,18,11,0.97) 0%,
+        rgba(26,18,11,0.75) 45%,
+        rgba(26,18,11,0.45) 75%,
+        rgba(26,18,11,0.2)  100%
+      );
     }
 
     .hero-content {
@@ -181,7 +192,7 @@
 
     .hero-sub {
       font-size: 19px;
-      color: rgba(244,239,230,0.85);
+      color: rgba(244,239,230,0.9);
       max-width: 560px;
       line-height: 1.7;
       margin-bottom: 2.25rem;
@@ -202,6 +213,7 @@
 
     .btn-primary:hover { background: #A34E22; }
 
+    /* SECTIONS */
     section { padding: 5.5rem 2.5rem; }
 
     .section-inner { max-width: 780px; margin: 0 auto; }
@@ -230,6 +242,7 @@
     p { margin-bottom: 1.25rem; }
     p:last-child { margin-bottom: 0; }
 
+    /* WHAT */
     #what { background: var(--ink); max-width: 100%; }
     #what h2 { color: #F4EFE6; }
     #what .label { color: var(--rust); }
@@ -256,12 +269,14 @@
     }
 
     .stat-label {
-      font-size: 14px;
+      font-size: 13px;
       color: rgba(244,239,230,0.6);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      line-height: 1.4;
     }
 
+    /* WATCH */
     #watch { background: var(--surface); max-width: 100%; }
 
     .video-grid {
@@ -294,6 +309,7 @@
 
     .channel-link a { color: var(--rust); text-decoration: underline; }
 
+    /* ABOUT */
     #about { background: var(--bg); }
 
     .about-grid {
@@ -309,9 +325,10 @@
       display: block;
       aspect-ratio: 4/5;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 15%;
     }
 
+    /* ALSO */
     #also { background: var(--surface); max-width: 100%; }
 
     .also-grid {
@@ -352,6 +369,7 @@
 
     .also-card p { font-size: 15px; color: var(--warm-mid); margin-bottom: 0; }
 
+    /* CONTACT */
     #contact { background: var(--bg); }
 
     .contact-form {
@@ -417,6 +435,7 @@
 
     .social-links a:hover { color: var(--rust); border-color: var(--rust); }
 
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--rule);
       padding: 2rem 2.5rem;
@@ -427,13 +446,14 @@
 
     footer a { color: var(--warm-mid); text-decoration: underline; }
 
+    /* MOBILE */
     @media (max-width: 768px) {
-      nav { padding: 0.85rem 1.25rem; }
+      nav { padding: 0 1.25rem; }
       .nav-toggle { display: flex; }
       .nav-links {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 60px;
         left: 0; right: 0;
         background: var(--bg);
         border-bottom: 1px solid var(--rule);
@@ -448,7 +468,7 @@
       .stats-row { grid-template-columns: 1fr; gap: 1.5rem; }
       .video-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .about-img { aspect-ratio: 3/2; }
+      .about-img { aspect-ratio: 3/2; object-position: center 20%; }
       .also-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
     }
@@ -496,7 +516,7 @@
     <section id="what">
       <div class="section-inner">
         <p class="label">What is the BanJoey</p>
-        <h2>Most drummers need a van. Joey needs a car and 20 minutes.</h2>
+        <h2>He needed a sound that didn't exist, so he built it.</h2>
         <p>The BanJoey is a banjo shell mounted on a custom-built box, driven by a bass pedal, topped with a cymbal, and fitted with snare wires underneath. It is a full rhythm section in one instrument that one person can carry, set up, and play alone. Joey designed it, built it by hand, and has been performing on it ever since.</p>
         <p>The name came from his bandmate Gale Trippsmith, who introduced him onstage one night and didn't know what to call the thing. She said "this is Joey playing a BanJoey" and it stuck. There is still only one in the world.</p>
 
@@ -506,12 +526,12 @@
             <span class="stat-label">Instrument in the world</span>
           </div>
           <div class="stat">
-            <span class="stat-number">60+</span>
-            <span class="stat-label">Years behind a kit</span>
+            <span class="stat-number">Built</span>
+            <span class="stat-label">Entirely by hand</span>
           </div>
           <div class="stat">
-            <span class="stat-number">0</span>
-            <span class="stat-label">Roadies required</span>
+            <span class="stat-number">Named</span>
+            <span class="stat-label">By Gale Trippsmith onstage</span>
           </div>
         </div>
       </div>
@@ -542,12 +562,19 @@
         <p class="label">About Joey</p>
         <div class="about-grid">
           <div>
-            <h2>Six decades behind a kit, and he still built something nobody had seen before.</h2>
-            <p>Joey Interrante is a professional drummer based in Tampa Bay who has spent his entire life playing music. He performs regularly across Florida with artists including Gale Trippsmith and the Kid Royal Band, records remote drum tracks through Hip Pocket Studios, and still carries his own gear to every single gig.</p>
-            <p>The BanJoey is the instrument he invented when nothing on the market did what he needed. He built the first one by hand, refined it over years of live performance, and has been turning heads with it ever since. It is the only one in existence, and he built it himself.</p>
+            <h2>A lifelong drummer who still builds his own gear.</h2>
+            <p>Joey Interrante is a professional drummer based in Tampa Bay. He performs regularly across Florida with artists including Gale Trippsmith and the Kid Royal Band, records remote drum tracks through Hip Pocket Studios, and still carries his own gear to every single gig.</p>
+            <p>The BanJoey is the instrument he invented when nothing on the market did what he needed. He built the first one by hand, refined it over years of live performance, and has been turning heads with it ever since. It is the only one in existence.</p>
           </div>
           <div>
-            <img class="about-img" src="assets/img/banjoey-home-about-img.jpg" alt="Joey Interrante performing with the BanJoey" loading="lazy" width="560" height="700">
+            <img
+              class="about-img"
+              src="assets/img/joey-interrante-banjoey-outdoor-concert.webp"
+              alt="Joey Interrante performing live with the BanJoey"
+              loading="lazy"
+              width="560"
+              height="700"
+            >
           </div>
         </div>
       </div>
