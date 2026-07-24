@@ -25,7 +25,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   [
@@ -61,9 +61,10 @@
       --warm-mid:  #7C5C48;
       --rule:      #D4C9B8;
       --surface:   #EDE7DA;
+      --cream:     #F4EFE6;
       --font-display: 'Abril Fatface', serif;
       --font-head:    'Playfair Display', serif;
-      --font-body:    'Lora', serif;
+      --font-body:    'Inter', sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,12 +74,12 @@
       background: var(--bg);
       color: var(--ink);
       font-family: var(--font-body);
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.75;
       overflow-x: hidden;
     }
 
-    /* NAV — padding-based, never clips */
+    /* NAV */
     .site-nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -92,9 +93,8 @@
     }
 
     .nav-logo {
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: 20px;
+      font-family: var(--font-display);
+      font-size: 22px;
       color: var(--ink);
       text-decoration: none;
       flex-shrink: 0;
@@ -108,9 +108,10 @@
     }
 
     .nav-links a {
-      font-family: var(--font-body);
+      font-family: var(--font-display);
       font-size: 14px;
-      color: var(--warm-mid);
+      letter-spacing: 0.02em;
+      color: var(--ink);
       text-decoration: none;
       transition: color 0.2s;
       white-space: nowrap;
@@ -163,7 +164,7 @@
     }
 
     .hero-sub {
-      font-size: 19px;
+      font-size: 18px;
       color: var(--warm-mid);
       max-width: 520px;
       line-height: 1.7;
@@ -186,6 +187,7 @@
       width: 100%;
       aspect-ratio: 4/5;
       object-fit: cover;
+      object-position: center 20%;
       border-radius: 2px;
     }
 
@@ -207,8 +209,6 @@
     section { padding: 5.5rem 2.5rem; }
     .section-inner { max-width: 780px; margin: 0 auto; }
     .section-inner.wide { max-width: 1100px; }
-    .section-inner.center { text-align: center; }
-    .section-inner.center p { margin-left: auto; margin-right: auto; max-width: 600px; }
 
     .label {
       font-size: 12px;
@@ -217,6 +217,7 @@
       color: var(--rust);
       margin-bottom: 1rem;
       font-family: var(--font-body);
+      font-weight: 600;
     }
 
     h2 {
@@ -231,15 +232,16 @@
     p { margin-bottom: 1.25rem; }
     p:last-child { margin-bottom: 0; }
 
-    /* WHAT */
-    #what { background: var(--ink); max-width: 100%; }
-    #what h2 { color: #F4EFE6; }
-    #what .label { color: var(--rust); }
-    #what p { color: rgba(244,239,230,0.82); }
+    /* DARK SECTIONS — shared styling */
+    section.dark { background: var(--ink); max-width: 100%; }
+    section.dark h2 { color: var(--cream); }
+    section.dark p { color: rgba(244,239,230,0.82); }
+    section.dark .label { color: var(--rust); }
+
+    /* LIGHT ALT SECTIONS */
+    section.lite { background: var(--surface); max-width: 100%; }
 
     /* WATCH */
-    #watch { background: var(--surface); max-width: 100%; }
-
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -270,9 +272,28 @@
 
     .channel-link a { color: var(--rust); text-decoration: underline; }
 
-    /* ABOUT */
-    #about { background: var(--bg); }
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
 
+    .gallery-grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    .gallery-grid img.wide-shot {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+    }
+
+    /* ABOUT */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -290,8 +311,6 @@
     }
 
     /* ALSO */
-    #also { background: var(--surface); max-width: 100%; }
-
     .also-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -319,6 +338,7 @@
       color: var(--rust);
       margin-bottom: 0.5rem;
       font-family: var(--font-body);
+      font-weight: 600;
     }
 
     .also-card h3 {
@@ -331,8 +351,6 @@
     .also-card p { font-size: 15px; color: var(--warm-mid); margin-bottom: 0; }
 
     /* CONTACT */
-    #contact { background: var(--bg); }
-
     .contact-form {
       margin-top: 2rem;
       display: flex;
@@ -415,6 +433,7 @@
       }
       .hero-content { justify-self: start; }
       .hero-frame { max-width: 420px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -435,6 +454,8 @@
       .nav-links li a { display: block; padding: 0.8rem 1.25rem; font-size: 16px; }
       section { padding: 3.5rem 1.25rem; }
       .video-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid img { aspect-ratio: 4/5; }
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-img { aspect-ratio: 3/2; object-position: center 20%; }
       .also-grid { grid-template-columns: 1fr; }
@@ -456,6 +477,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#what"    onclick="closeNav()">What is it</a></li>
       <li><a href="#watch"   onclick="closeNav()">Watch</a></li>
+      <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
       <li><a href="#about"   onclick="closeNav()">About Joey</a></li>
       <li><a href="#contact" onclick="closeNav()">Contact</a></li>
     </ul>
@@ -471,16 +493,16 @@
       </div>
       <div class="hero-frame">
         <img
-          src="assets/banjoey-2.png"
-          alt="The BanJoey, Joey Interrante's fusion instrument"
-          width="800"
-          height="1000"
+          src="assets/img/joey-interrante-banjoey-outdoor-concert.webp"
+          alt="Joey Interrante playing the BanJoey at an outdoor concert"
+          width="560"
+          height="700"
           fetchpriority="high"
         >
       </div>
     </section>
 
-    <section id="what">
+    <section id="what" class="dark">
       <div class="section-inner">
         <p class="label">What is the BanJoey</p>
         <h2>He needed a sound that didn't exist anywhere, so he went and made it.</h2>
@@ -489,7 +511,7 @@
       </div>
     </section>
 
-    <section id="watch">
+    <section id="watch" class="lite">
       <div class="section-inner wide">
         <p class="label">Watch</p>
         <h2>Hear it for yourself.</h2>
@@ -509,6 +531,19 @@
       </div>
     </section>
 
+    <section id="gallery" class="dark">
+      <div class="section-inner wide">
+        <p class="label">Gallery</p>
+        <h2>The BanJoey up close.</h2>
+        <div class="gallery-grid">
+          <img src="assets/banjoey-1.png" alt="Joey Interrante performing on the BanJoey" loading="lazy" width="1280" height="720" class="wide-shot">
+          <img src="assets/banjoey-2.png" alt="Joey Interrante with the BanJoey" loading="lazy" width="800" height="1000">
+          <img src="assets/banjoey-3.png" alt="The BanJoey in detail" loading="lazy" width="800" height="1000">
+          <img src="assets/banjoey-4.png" alt="Joey Interrante playing the BanJoey live" loading="lazy" width="800" height="1000">
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <div class="section-inner">
         <p class="label">About Joey</p>
@@ -521,18 +556,18 @@
           <div>
             <img
               class="about-img"
-              src="assets/img/joey-interrante-banjoey-outdoor-concert.webp"
-              alt="Joey Interrante performing live"
+              src="assets/img/banjoey-hero-home.jpg"
+              alt="Joey Interrante playing the BanJoey"
               loading="lazy"
-              width="560"
-              height="700"
+              width="1600"
+              height="900"
             >
           </div>
         </div>
       </div>
     </section>
 
-    <section id="also">
+    <section id="also" class="dark">
       <div class="section-inner">
         <p class="label">More from Joey Interrante</p>
         <h2>The BanJoey is one part of the story.</h2>
