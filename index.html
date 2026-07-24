@@ -138,21 +138,34 @@
       border-radius: 2px;
     }
 
-    /* HERO — split layout, photo in framed box */
+    /* HERO — image bleeds in from the right, fades into the copy */
     #hero {
+      position: relative;
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      display: flex;
       align-items: center;
-      gap: 3rem;
       background: var(--bg);
       padding: 7rem 2.5rem 4rem;
       max-width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 62%;
+      object-fit: cover;
+      object-position: center;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
+      mask-image: linear-gradient(to right, transparent 0%, black 40%);
     }
 
     .hero-content {
-      max-width: 640px;
-      justify-self: end;
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
     }
 
     h1.hero-h1 {
@@ -166,29 +179,9 @@
     .hero-sub {
       font-size: 18px;
       color: var(--warm-mid);
-      max-width: 520px;
+      max-width: 480px;
       line-height: 1.7;
       margin-bottom: 2.25rem;
-    }
-
-    .hero-frame {
-      justify-self: start;
-      background: var(--surface);
-      border: 1px solid var(--rule);
-      border-radius: 3px;
-      padding: 1rem;
-      box-shadow: 0 18px 45px rgba(26,18,11,0.12);
-      max-width: 460px;
-      width: 100%;
-    }
-
-    .hero-frame img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      object-position: center 20%;
-      border-radius: 2px;
     }
 
     .btn-primary {
@@ -286,11 +279,6 @@
       aspect-ratio: 4/5;
       object-fit: cover;
       border-radius: 3px;
-    }
-
-    .gallery-grid img.wide-shot {
-      grid-column: 1 / -1;
-      aspect-ratio: 16/9;
     }
 
     /* ABOUT */
@@ -426,13 +414,26 @@
 
     @media (max-width: 900px) {
       #hero {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 6.5rem 1.25rem 3rem;
-        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 0 1.25rem 3rem;
+        min-height: 92vh;
       }
-      .hero-content { justify-self: start; }
-      .hero-frame { max-width: 420px; }
+      .hero-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 58%;
+        object-position: center 30%;
+        -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+      }
+      .hero-content {
+        margin-top: 48vh;
+      }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -455,7 +456,6 @@
       section { padding: 3.5rem 1.25rem; }
       .video-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-grid img { aspect-ratio: 4/5; }
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .about-img { aspect-ratio: 3/2; object-position: center 20%; }
       .also-grid { grid-template-columns: 1fr; }
@@ -486,19 +486,18 @@
   <main>
 
     <section id="hero">
+      <img
+        class="hero-img"
+        src="assets/banjoey-1.png"
+        alt="Joey Interrante performing on the BanJoey"
+        width="1280"
+        height="720"
+        fetchpriority="high"
+      >
       <div class="hero-content">
         <h1 class="hero-h1">Experience the BanJoey.</h1>
         <p class="hero-sub">Tampa Bay drummer Joey Interrante's fusion instrument: Caj&oacute;n, bass pedal, cymbal, and banjo shell in one tiny but mighty drum kit.</p>
         <a href="#what" class="btn-primary">See how it works</a>
-      </div>
-      <div class="hero-frame">
-        <img
-          src="assets/img/joey-interrante-banjoey-outdoor-concert.webp"
-          alt="Joey Interrante playing the BanJoey at an outdoor concert"
-          width="560"
-          height="700"
-          fetchpriority="high"
-        >
       </div>
     </section>
 
@@ -536,7 +535,6 @@
         <p class="label">Gallery</p>
         <h2>The BanJoey up close.</h2>
         <div class="gallery-grid">
-          <img src="assets/banjoey-1.png" alt="Joey Interrante performing on the BanJoey" loading="lazy" width="1280" height="720" class="wide-shot">
           <img src="assets/banjoey-2.png" alt="Joey Interrante with the BanJoey" loading="lazy" width="800" height="1000">
           <img src="assets/banjoey-3.png" alt="The BanJoey in detail" loading="lazy" width="800" height="1000">
           <img src="assets/banjoey-4.png" alt="Joey Interrante playing the BanJoey live" loading="lazy" width="800" height="1000">
@@ -556,11 +554,11 @@
           <div>
             <img
               class="about-img"
-              src="assets/img/banjoey-hero-home.jpg"
-              alt="Joey Interrante playing the BanJoey"
+              src="assets/img/joey-interrante-banjoey-outdoor-concert.webp"
+              alt="Joey Interrante performing live"
               loading="lazy"
-              width="1600"
-              height="900"
+              width="560"
+              height="700"
             >
           </div>
         </div>
