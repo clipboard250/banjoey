@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BanJoey — Joey Interrante's One-of-a-Kind Instrument</title>
-  <meta name="description" content="The BanJoey is a handmade instrument invented by Tampa Bay drummer Joey Interrante — a banjo shell played like a kick drum, with a cymbal on top and snare wires underneath. Nobody else has one.">
+  <meta name="description" content="The BanJoey is a handmade instrument invented by Tampa Bay drummer Joey Interrante: a banjo shell on a caj&oacute;n box, played with a bass pedal, with a cymbal and snare wires. Nobody else has one.">
   <link rel="canonical" href="https://banjoey.com/">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
@@ -28,29 +28,108 @@
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
-  [
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://joeydrums.com/#joey",
       "name": "Joey Interrante",
-      "url": "https://banjoey.com/",
-      "description": "Joey Interrante is a Tampa Bay drummer and inventor of the BanJoey, a handmade instrument built from a banjo shell, bass pedal, cymbal, and snare wires.",
-      "knowsAbout": ["Drumming", "Percussion", "Handmade Instruments", "Music Performance", "Banjo"],
+      "alternateName": "Joseph Interrante",
+      "url": "https://joeydrums.com",
+      "jobTitle": "Professional Drummer",
+      "description": "Joey Interrante is a Tampa Bay drummer with 50 years behind the kit, a Tampa-based session drummer through Hip Pocket Studios, and the inventor of the BanJoey, a handmade instrument built from a banjo shell, cajón box, bass pedal, cymbal, and snare wires.",
+      "worksFor": {
+        "@id": "https://hippocketstudios.com/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        "Drumming",
+        "Percussion",
+        "Handmade instruments",
+        "Live performance",
+        "Session drumming"
+      ],
       "sameAs": [
+        "https://joeydrums.com",
+        "https://hippocketstudios.com",
+        "https://banjoey.com",
         "https://www.facebook.com/p/BanJoey-Official-61555344519003/",
+        "https://www.facebook.com/joey.gmsdrums",
         "https://www.youtube.com/@banjoeydrummer",
         "https://www.instagram.com/banjoey_official",
-        "https://joeydrums.com",
-        "https://hippocketstudios.com"
+        "https://www.instagram.com/interrantejoseph_banjoey",
+        "https://g.page/r/Ce1XKDOy8q0VEBM/review"
       ]
     },
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
+      "@type": "CreativeWork",
+      "@id": "https://banjoey.com/#banjoey",
       "name": "BanJoey",
-      "url": "https://banjoey.com/"
+      "url": "https://banjoey.com/",
+      "description": "A one-of-a-kind percussion instrument invented and handmade by Tampa Bay drummer Joey Interrante: a banjo shell on a cajón box, played with a bass pedal, with a cymbal on top and snare wires underneath.",
+      "creator": {
+        "@id": "https://joeydrums.com/#joey"
+      },
+      "image": "https://banjoey.com/assets/banjoey-1.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://banjoey.com/#website",
+      "name": "BanJoey",
+      "url": "https://banjoey.com/",
+      "about": {
+        "@id": "https://banjoey.com/#banjoey"
+      },
+      "publisher": {
+        "@id": "https://joeydrums.com/#joey"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://banjoey.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a BanJoey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The BanJoey is a one-of-a-kind percussion instrument invented and handmade by Tampa Bay drummer Joey Interrante. It puts a banjo shell on a cajón box, played with a bass pedal, with a cymbal on top and snare wires underneath. It works like a tiny but mighty drum kit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who invented the BanJoey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Joey Interrante, a professional drummer based in Tampa Bay, Florida, with 50 years behind the kit. He designed and built it by hand because nothing on the market had the sound he wanted, then refined it over years of live shows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How did the BanJoey get its name?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Joey's bandmate Gale Trippsmith introduced him onstage one night as \"Joey playing a BanJoey,\" and the name stuck."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I hear the BanJoey live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Joey plays shows across Tampa Bay and Florida, including acoustic sets with Gale Trippsmith as Gale and Joey. His full schedule is on JoeyDrums.com, and performance videos are on YouTube at @banjoeydrummer."
+          }
+        }
+      ]
     }
   ]
+}
   </script>
 
   <style>
@@ -230,6 +309,15 @@
     section.dark h2 { color: var(--cream); }
     section.dark p { color: rgba(244,239,230,0.82); }
     section.dark .label { color: var(--rust); }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.12); padding: 1.1rem 0; }
+    .faq-item summary { cursor: pointer; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--rust); font-size: 1.3rem; line-height: 1; }
+    .faq-item[open] summary::after { content: "\2013"; }
+    .faq-item p { margin: 0.8rem 0 0; }
+    .faq-item a { color: var(--rust); }
 
     /* LIGHT ALT SECTIONS */
     section.lite { background: var(--surface); max-width: 100%; }
@@ -588,6 +676,29 @@
       </div>
     </section>
 
+    <section id="faq" class="lite">
+      <div class="section-inner">
+        <p class="label">Good to know</p>
+        <h2>BanJoey questions, answered.</h2>
+        <details class="faq-item">
+          <summary>What is a BanJoey?</summary>
+          <p>The BanJoey is a one-of-a-kind percussion instrument invented and handmade by Tampa Bay drummer Joey Interrante. It puts a banjo shell on a caj&oacute;n box, played with a bass pedal, with a cymbal on top and snare wires underneath. It works like a tiny but mighty drum kit.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Who invented the BanJoey?</summary>
+          <p>Joey Interrante, a professional drummer based in Tampa Bay, Florida, with 50 years behind the kit. He designed and built it by hand because nothing on the market had the sound he wanted, then refined it over years of live shows.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How did the BanJoey get its name?</summary>
+          <p>Joey's bandmate Gale Trippsmith introduced him onstage one night as "Joey playing a BanJoey," and the name stuck.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where can I hear the BanJoey live?</summary>
+          <p>Joey plays shows across Tampa Bay and Florida, including acoustic sets with Gale Trippsmith as Gale and Joey. His full schedule is on <a href="https://joeydrums.com">JoeyDrums.com</a>, and performance videos are on YouTube at <a href="https://www.youtube.com/@banjoeydrummer">@banjoeydrummer</a>.</p>
+        </details>
+      </div>
+    </section>
+
     <section id="also" class="dark">
       <div class="section-inner">
         <p class="label">More from Joey Interrante</p>
@@ -615,6 +726,7 @@
         <form class="contact-form" action="https://formspree.io/f/xnjlnvjb" method="POST">
           <input type="hidden" name="_subject" value="BanJoey.com inquiry">
           <input type="hidden" name="_cc" value="interrantej@gmail.com">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-row">
             <input type="text" name="name" placeholder="Your name" required autocomplete="name">
             <input type="email" name="email" placeholder="Your email" required autocomplete="email">
